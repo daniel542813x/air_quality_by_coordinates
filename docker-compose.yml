@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  postgres:
+      container_name: air-quality-db
+      image: "postgres:16.2"
+      volumes:
+          - ./postgres-volume:/var/lib/postgresql/data
+      ports:
+          - "5432:5432"
+      environment:
+          POSTGRES_PASSWORD: password
+          POSTGRES_USER: user
+          POSTGRES_DB: air-quality-db
+
+  air-quality-api:
+    build:
+        dockerfile: ./api/Dockerfile
+    ports:
+        - "8000:8000"
+    volumes:
+        - ./api:/app
+    depends_on:
+        - postgres
+    links:
+        - postgres
+    environment:
+        DATABASE_URL: postgresql://user:password@postgres:5432/air-quality-db
+
+    
