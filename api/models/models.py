@@ -1,4 +1,5 @@
-from sqlalchemy import  Column, Integer, String
+from datetime import datetime
+from sqlalchemy import  Column, Integer, String, DateTime
 from .database import Base
 
 
@@ -12,5 +13,6 @@ class AirQuality(Base):
     type_gas = Column(String, index=True)
     data = Column(String, index=True)
     tag = Column(String, index=True)
+    created_at = Column(DateTime, default=datetime.now)
     
     

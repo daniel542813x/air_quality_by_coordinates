@@ -53,10 +53,22 @@ async def get_air_quality(latitude: float, longitude: float, type_gas: str, fore
     
 @router.post("/api/data")
 async def create_air_quality(air_quality: AirQualitySchema):
-    db.add(air_quality)
+    
+    air_quality_obj = AirQuality(
+        latitude=air_quality.latitude,
+        longitude=air_quality.longitude,
+        elevation=air_quality.elevation,
+        type_gas=air_quality.type_gas,
+        data=str(air_quality.data),
+        tag=air_quality.tag 
+    )
+    
+    db.add(air_quality_obj)
     db.commit()
-    db.refresh(air_quality)
-    return air_quality
+    
+    return {
+        "message": "Data created successfully"
+    }
 
 
 @router.websocket("/ws")
