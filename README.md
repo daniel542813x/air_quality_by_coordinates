@@ -37,7 +37,7 @@ This project was created with the purpose of providing a personalized monitoring
 | `latitude`      | `float` | **Required**. Site latitude |
 | `longitude`      | `float` | **Required**. Site longitude |
 | `type_gas`      | `string` | **Required**. Type of toxic gas |
-| `forecast_days`      | `number` | **Required**. 16 < 0 days  |
+| `forecast_days`      | `number` | **Required**. 16 > forecast_days > 0 |
 
 
 #### Store toxic gases on database 
@@ -59,6 +59,15 @@ This project was created with the purpose of providing a personalized monitoring
       data : list 
   }
 ```
+
+#### WebSocket Service
+
+From socker-template run the Template.html
+
+With this it is possible to receive the parameters through a form and obtain a response from the server with bidirectional communication
+
+![plot](./socket-template/templae-example.png)
+
 
 ## Installation
 

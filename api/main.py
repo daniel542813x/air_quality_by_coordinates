@@ -7,4 +7,6 @@ app.include_router(air_quality.router)
 
 @app.get("/")
 async def root():
- return {"Hello": "World",}
+ return {
+        "message": "Welcome to the Air Quality API"
+ }

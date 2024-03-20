@@ -16,3 +16,16 @@ class ConnectionManager:
     def disconnect(self, websocket: WebSocket):
         """disconnect event"""
         self.active_connections.remove(websocket)
+        
+def is_validate_air_quality_params(air_params):
+    required_params = ["latitude", "longitude", "type_gas", "forecast_days"]
+    
+    for param in required_params:
+        if param not in air_params: 
+            return False
+        
+    return True
+        
+    
+    
+    

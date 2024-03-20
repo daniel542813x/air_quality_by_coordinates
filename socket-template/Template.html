@@ -18,7 +18,7 @@
         </row>
         <row>
             <label for="messageText">Gas Type:</label>
-            <input type="text" id="gas_type">
+            <input type="text" id="type_gas">
         </row>
         <row>
             <label for="messageText">Forecast days:</label>
@@ -28,7 +28,7 @@
     </form>
     <pre id='messages'></pre> 
     <script>
-        var ws = new WebSocket(`ws://localhost:8000/air_quality/communicate`);
+        var ws = new WebSocket(`ws://localhost:8000/air_quality/sync/data`);
         console.log("Connected")
         ws.onmessage = function (event) {
             //reset the messages
@@ -39,18 +39,18 @@
             message.appendChild(content)
             messages.appendChild(message)
         };
-        console.log("Send Mesage")
+
         function sendMessage(event) {
             var latitude = document.getElementById('latitude')
             var longitude = document.getElementById('longitude')
-            var gas_type = document.getElementById('gas_type')
+            var type_gas = document.getElementById('type_gas')
             var forecast = document.getElementById('forecast')
 
             json = {
                 "latitude": latitude.value,
                 "longitude": longitude.value,
-                "gas_type": gas_type.value,
-                "forecast": forecast.value
+                "type_gas": type_gas.value,
+                "forecast_days": forecast.value
             }
 
             ws.send(JSON.stringify(json))
