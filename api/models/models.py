@@ -1,10 +1,7 @@
-from sqlalchemy import Boolean, Column, ForeignKey, Integer, String
-from sqlalchemy.orm import relationship
-
+from sqlalchemy import  Column, Integer, String
 from .database import Base
 
 
-# class for store latitude,longitude,elevation,type, diccionary of the data
 class AirQuality(Base):
     __tablename__ = "air_quality"
 
@@ -12,8 +9,8 @@ class AirQuality(Base):
     latitude = Column(String, index=True)
     longitude = Column(String, index=True)
     elevation = Column(String, index=True)
-    type = Column(String, index=True)
+    type_gas = Column(String, index=True)
     data = Column(String, index=True)
-    tags = Column(String, index=True)
+    tag = Column(String, index=True)
     
     
