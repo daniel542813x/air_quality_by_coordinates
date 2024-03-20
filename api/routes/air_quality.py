@@ -13,9 +13,14 @@ router = APIRouter(
 )
 
 
-@router.get("/")
+@router.get("/store/api/data")
 async def read_root():
     return db.query(AirQuality).all()
+
+
+@router.get("/store/api/data/{id}")
+async def read_air_quality(id: int):
+    return db.query(AirQuality).filter(AirQuality.id == id).first()
 
 
 @router.get("/api/data")
