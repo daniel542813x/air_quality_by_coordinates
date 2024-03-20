@@ -121,6 +121,11 @@ curl --location --request POST 'localhost:8000/air_quality/api/data' \
 
 
 ## DEMOS
+[GET TOXIC GASES BY COODINATES](https://github.com/daniel542813x/air_quality_by_coordinates/assets/43730664/268faf97-cedb-477b-b36f-fc16917b8656)
+
+[SHOW AND STORE DATA TO DATABASE](https://github.com/daniel542813x/air_quality_by_coordinates/assets/43730664/df194f67-3c1b-4f32-8140-45500662b3f1)
+
+[DEMO WEB SOCKER FOR GET TOXIC GASES](https://github.com/daniel542813x/air_quality_by_coordinates/assets/43730664/6930cd2e-5426-4525-8550-7c9f9aa4d04a)
 
 
 
