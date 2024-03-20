@@ -3,6 +3,7 @@
 
 This project was created with the purpose of providing a personalized monitoring and storage solution for the amount of toxic gases (pm10, carbon_monoxide, etc.) in certain coordinates.
 
+In the backend this project use air-quality-api.open-meteo.com API.
 
 ## Documentation
 
